@@ -1,0 +1,187 @@
+/* ─────────────────────────────────────────────────────
+   login.css — Estilos de la pantalla de inicio de sesión
+   ───────────────────────────────────────────────────── */
+
+#loginScreen {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.login-art {
+  flex: 1;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-art::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,148,136,.35) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+
+.login-art::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,184,166,.2) 0%, transparent 70%);
+  bottom: 50px; left: -50px;
+}
+
+.login-brand {
+  position: relative;
+  z-index: 1;
+}
+
+.login-brand .logo-mark {
+  width: 52px; height: 52px;
+  background: var(--teal);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 0 30px rgba(13,148,136,.5);
+}
+
+.login-brand h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.login-brand p {
+  color: var(--slate);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.login-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.stat-item { position: relative; z-index: 1; }
+.stat-item strong {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--teal-light);
+}
+.stat-item span {
+  font-size: 12px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.login-panel {
+  width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 50px;
+  background: var(--white);
+}
+
+.login-form-wrap { width: 100%; }
+.login-form-wrap h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: var(--navy);
+}
+.login-form-wrap > p { color: var(--slate); font-size: 14px; margin-bottom: 36px; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+
+.input-wrap { position: relative; }
+.input-wrap .icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  font-size: 16px; color: var(--slate);
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 13px 14px 13px 42px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--cream);
+  transition: all .2s;
+  outline: none;
+}
+.input-wrap input:focus {
+  border-color: var(--teal);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(13,148,136,.08);
+}
+
+.role-select {
+  display: flex; gap: 10px; margin-bottom: 24px;
+}
+.role-btn {
+  flex: 1; padding: 10px 8px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--slate);
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+}
+.role-btn.active { border-color: var(--teal); background: #f0fdfa; color: var(--teal-dim); }
+
+.btn-primary {
+  width: 100%; padding: 14px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  letter-spacing: .01em;
+}
+.btn-primary:hover {
+  background: var(--teal-dim);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(13,148,136,.3);
+}
+
+.login-hint { text-align: center; margin-top: 20px; font-size: 13px; color: var(--slate); }
+.login-error { color: var(--error); font-size: 13px; margin-bottom: 12px; display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  #loginScreen { flex-direction: column; }
+  .login-art { display: none; }
+  .login-panel { width: 100%; }
+}

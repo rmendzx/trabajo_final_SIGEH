@@ -1,0 +1,156 @@
+/* ─────────────────────────────────────────────────────
+   modules.css — Estilos específicos por módulo funcional
+   ───────────────────────────────────────────────────── */
+
+/* ── HISTORIA CLÍNICA ── */
+.patient-search {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex; gap: 14px; align-items: flex-end;
+}
+.patient-search .form-group-inner { margin: 0; flex: 1; }
+.patient-search .btn-teal { padding: 11px 22px; flex-shrink: 0; }
+
+.hc-grid { display: grid; grid-template-columns: 300px 1fr; gap: 20px; }
+.patient-list-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid var(--border); overflow: hidden;
+}
+.patient-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer; transition: all .15s;
+  display: flex; align-items: center; gap: 12px;
+}
+.patient-item:last-child { border-bottom: none; }
+.patient-item:hover { background: #f8fafc; }
+.patient-item.selected { background: #f0fdfa; border-left: 3px solid var(--teal); }
+
+.patient-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 600; font-size: 13px; flex-shrink: 0;
+}
+.patient-info span { display: block; font-size: 14px; font-weight: 500; color: var(--text); }
+.patient-info small { font-size: 12px; color: var(--slate); }
+
+.hc-detail { background: #fff; border-radius: 14px; border: 1px solid var(--border); }
+.hc-tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 24px; }
+.hc-tab {
+  padding: 14px 16px;
+  font-size: 13px; font-weight: 500;
+  color: var(--slate); cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .15s; white-space: nowrap;
+}
+.hc-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+.hc-tab-content { display: none; padding: 24px; }
+.hc-tab-content.active { display: block; }
+
+.info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 20px; }
+.info-item label {
+  display: block; font-size: 11px; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--slate); margin-bottom: 4px;
+}
+.info-item span { font-size: 14px; color: var(--text); font-weight: 500; }
+
+.consulta-card {
+  background: var(--cream); border-radius: 10px;
+  padding: 16px 18px; margin-bottom: 12px;
+  border-left: 3px solid var(--teal);
+}
+.consulta-card .meta { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.consulta-card .meta strong { font-size: 13px; color: var(--navy); }
+.consulta-card .meta span { font-size: 12px; color: var(--slate); }
+.consulta-card p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+/* ── CITAS (CALENDARIO) ── */
+.calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.cal-nav { display: flex; gap: 8px; align-items: center; }
+.cal-nav button {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 12px;
+  cursor: pointer; font-size: 14px; transition: all .15s;
+}
+.cal-nav button:hover { border-color: var(--teal); color: var(--teal); }
+.cal-nav h3 {
+  font-family: 'DM Serif Display', serif; font-size: 20px;
+  color: var(--navy); min-width: 200px; text-align: center;
+}
+
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; }
+.cal-day-label {
+  text-align: center; font-size: 11px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--slate); padding: 8px 0;
+}
+.cal-day {
+  min-height: 80px; background: #fff; border-radius: 10px;
+  border: 1px solid var(--border); padding: 8px;
+  cursor: pointer; transition: all .15s;
+}
+.cal-day:hover { border-color: var(--teal); }
+.cal-day.today { border-color: var(--teal); background: #f0fdfa; }
+.cal-day.other-month { opacity: .4; }
+.cal-day-num { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.cal-day.today .cal-day-num { color: var(--teal); }
+.cal-event {
+  font-size: 10px; background: var(--teal); color: #fff;
+  border-radius: 4px; padding: 1px 5px; margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cal-event.pending { background: var(--warning); }
+.cal-event.cancelled { background: var(--slate); }
+
+/* ── FACTURACIÓN ── */
+.invoice-stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 24px; }
+.invoice-stat {
+  background: #fff; border-radius: 14px; border: 1px solid var(--border);
+  padding: 20px 24px; text-align: center;
+}
+.invoice-stat .amount {
+  font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--navy);
+}
+.invoice-stat p { font-size: 13px; color: var(--slate); margin-top: 4px; }
+
+/* ── REPORTES ── */
+.bar-chart {
+  display: flex; gap: 12px; align-items: flex-end;
+  height: 180px; width: 100%;
+}
+.bar-wrap {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 8px; height: 100%; justify-content: flex-end;
+}
+.bar {
+  width: 100%; background: var(--teal);
+  border-radius: 6px 6px 0 0; transition: all .3s;
+  min-height: 4px; opacity: .85;
+}
+.bar:hover { opacity: 1; transform: scaleY(1.02); transform-origin: bottom; }
+.bar-label { font-size: 11px; color: var(--slate); font-weight: 500; }
+
+.report-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 20px; }
+.report-card {
+  background: #fff; border-radius: 14px; border: 1px solid var(--border);
+  padding: 22px; cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 16px;
+}
+.report-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13,148,136,.1);
+}
+.report-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: #f0fdfa;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.report-card h5 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.report-card p { font-size: 13px; color: var(--slate); }
