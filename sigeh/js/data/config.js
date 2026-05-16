@@ -1,4 +1,24 @@
 /**
+ * @file config.js
+ * @description Constantes de configuración global del sistema SIGEH.
+ *
+ * Laboratorio Final — Integración Continua, Calidad y Despliegue Cloud
+ * Asignatura: Ingeniería de Software
+ * Institución: Corporación Universitaria Antonio José de Sucre
+ * Empresa: SoftHealth Solutions S.A.S.
+ *
+ * Integrantes:
+ *  - Carlos Cochero
+ *  - Roni Mendiz
+ *  - Gerneidis Requena
+ *  - David Borja
+ *  - Briem Lopez
+ *
+ * @version 1.0.0
+ * @date Mayo 2026
+ */
+
+/**
  * config.js — Constantes de configuración global del sistema SIGEH.
  *
  * Elimina todos los "valores mágicos" identificados en el análisis:
